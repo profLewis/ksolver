@@ -225,14 +225,14 @@ def ksolve(d,drmse_thresh = 0.02, doPlot=False,\
       sumW += np.sum(k.outlier_wt)
     rmse.append(np.sqrt(sse/sumW))
     drmse = (rmse[-2] - rmse[-1])/rmse[-2]
-    if (n > 1) and (drmse < drmse_thresh):
-      break
     if doPlot:
       plt.figure(0);k.plot_t(b=0);plt.figure(1);k.plot_s()
     k.d['rmse'] = rmse
     if verbose:
       print n,rmse,drmse
-    return k
+    if (n > 1) and (drmse < drmse_thresh):
+      break
+  return k
 
 def __main__():
   import pickle
