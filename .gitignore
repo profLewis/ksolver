@@ -1,4 +1,7 @@
 *.py[cod]
+*.pkl
+*/*.pkl
+*.pyc
 
 # C extensions
 *.so
