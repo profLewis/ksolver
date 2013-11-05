@@ -34,7 +34,7 @@ x the_doys.npz
 info = [i.split('.')[0] for i in info]
 
 for i in info:
-    k,data[i] = np.load(i+'.npz').items()[0]
+    k,data[i] = np.load('data/'+i+'.npz').items()[0]
 refl_fire = []
 refl_nofire = []
 c = re.compile('brdf')
@@ -135,7 +135,7 @@ data1 = {'Ross':np.array(Ross_no_fire),'Li':np.array(Li_no_fire),\
 	 'SolarAzimuth':np.array(SolarAzimuth_2004_no_fire_),\
 	 'refl':np.array(refl_nofire_),'mask':refl_nofire_.mask,'doys':all_doys}
 
-pkl_file = open('data_nofire.pkl', 'wb')
+pkl_file = open('data/data_nofire.pkl', 'wb')
 pickle.dump(data1,pkl_file)
 pkl_file.close()
 
@@ -145,7 +145,7 @@ data1 = {'Ross':np.array(Ross_fire),'Li':np.array(Li_fire),\
          'SolarAzimuth':np.array(SolarAzimuth_2004_fire_),\
          'refl':np.array(refl_fire_),'mask':refl_fire_.mask,'doys':all_doys}
 
-pkl_file = open('data_fire.pkl', 'wb')
+pkl_file = open('data/data_fire.pkl', 'wb')
 pickle.dump(data1,pkl_file)
 pkl_file.close()
 
